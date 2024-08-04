@@ -6,7 +6,7 @@ type selectOptions = {
 interface SelectBoxProps {
     id: string;
     options: selectOptions[];
-    selectRef: React.MutableRefObject<HTMLSelectElement> ;
+    selectRef: React.RefObject<HTMLSelectElement> ;
     defaultOption: string;
 }
 

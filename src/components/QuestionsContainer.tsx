@@ -22,7 +22,7 @@ const QuestionsContainer:React.FC<QuestionsContainerProps> = ({selectedCategoryI
     }
 
     const shuffleAnswers = (answersArrays: string[]) => {
-        return answersArrays.sort((a,b) => Math.random() - 0.5)
+        return answersArrays.sort(() => Math.random() - 0.5)
     }
     
     useEffect(() => {
@@ -42,6 +42,7 @@ const QuestionsContainer:React.FC<QuestionsContainerProps> = ({selectedCategoryI
         ).catch(
             (error) => {
                 console.log('an error has occured',error)
+                initiateQuizData([])
             }
         )
 

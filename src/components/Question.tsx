@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react'
+import { MouseEvent, useContext, useState } from 'react'
 import {decodeHtmlEntities} from './../utils/constantes'
 import { QuizContext } from '../context/QuizContext';
 import { QuizQuestion } from '../utils/interfaces';
@@ -10,18 +10,18 @@ interface QuestionProps {
 
 const Question:React.FC<QuestionProps> = ({questionData, mode}) => {
 
-    const [selectedAnswer, setSelectedAnswer] = useState();
+    const [selectedAnswer, setSelectedAnswer] = useState<string>();
 
     const {updateQuizData} = useContext(QuizContext)
     const isResult = mode == 'resultpage'
 
 
-    const onAnswerClicked = (e) => {
+    const onAnswerClicked = (e:MouseEvent<HTMLButtonElement>) => {
         updateQuizData({
             ...questionData,
-            selected_answer: e.target.value
+            selected_answer: e.currentTarget.value
         })
-        setSelectedAnswer(e.target.value)
+        setSelectedAnswer(e.currentTarget.value)
     }
 
     return (

@@ -12,8 +12,8 @@ interface CategorySelectorProps {
 const CategorySelector:React.FC<CategorySelectorProps> = ({handleOnCreateClicked}) => {
     const [errorMsg, setErrorMsg] = useState<string>();
     const [categories, setCategories] = useState()
-    const categoryRef = useRef<HTMLSelectElement>()
-    const difficultyRef = useRef<HTMLSelectElement>()
+    const categoryRef = useRef<HTMLSelectElement>(null)
+    const difficultyRef = useRef<HTMLSelectElement>(null)
 
     useEffect(() => {
 

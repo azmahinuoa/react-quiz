@@ -11,7 +11,11 @@ interface QuizProviderProps {
     children: ReactNode;
 }
 
-const QuizContext = createContext<QuizContextProps>({});
+const QuizContext = createContext<QuizContextProps>({
+    quizData: [] , 
+    initiateQuizData: () => {}, 
+    updateQuizData: () => {}
+});
 
 
 const QuizProvider: React.FC<QuizProviderProps> = ({children}) => {
